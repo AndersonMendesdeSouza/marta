@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f7f3ed" />
+  <meta name="description" content="Descubra joias delicadas e atemporais. Colares, brincos, pulseiras e anéis para iluminar cada momento." />
+  <title>Marta Joias | Brilhe em cada detalhe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Italiana&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="announcement"><span>✧</span> Elegância que acompanha cada momento <span>✧</span></div>
+  <header class="header" id="inicio">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="Marta Joias, início">MARTA <span>JOIAS</span></a>
+      <nav class="nav" id="nav" aria-label="Navegação principal">
+        <a href="#inicio">Início</a><a href="#categorias">Coleções</a><a href="#produtos">Joias</a><a href="#sobre">Nossa essência</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-button favorites-trigger" id="favoritesTrigger" aria-label="Mostrar minhas favoritas" title="Minhas favoritas">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg>
+          <span class="count" id="favCount" hidden>0</span>
+        </button>
+        <a class="header-contact" href="#contato">Fale conosco <span>↗</span></a>
+        <button class="icon-button menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-banner">
+        <img class="hero-image" src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=1920&q=85" alt="Composição delicada de joias douradas" fetchpriority="high" />
+        <div class="hero-copy">
+          <p class="eyebrow">PEÇAS QUE CONTAM HISTÓRIAS</p>
+          <h1 id="hero-title">A beleza está nos detalhes.</h1>
+          <a href="#produtos" class="hero-link">Explorar coleção <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits" aria-label="Diferenciais">
+      <div class="container benefit-grid"><div><span>✧</span> Seleção feita com carinho</div><div><span>◌</span> Elegância em cada peça</div><div><span>♡</span> Presentes inesquecíveis</div></div>
+    </section>
+
+    <section class="section categories" id="categorias">
+      <div class="container">
+        <div class="section-top"><div><p class="eyebrow center-mobile">ENCONTRE SEU ESTILO</p><h2>Um detalhe para cada <em>momento.</em></h2></div><p>Explore nossas coleções e escolha a peça que combina com você.</p></div>
+        <div class="category-grid">
+          <a class="category-card" href="#produtos" data-category-link="colares"><img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=800&q=80" alt="Colares dourados" loading="lazy"><div class="category-shade"></div><div class="category-info"><span>01 / COLEÇÃO</span><h3>Colares</h3><span class="category-arrow">↗</span></div></a>
+          <a class="category-card" href="#produtos" data-category-link="brincos"><img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80" alt="Brincos delicados" loading="lazy"><div class="category-shade"></div><div class="category-info"><span>02 / COLEÇÃO</span><h3>Brincos</h3><span class="category-arrow">↗</span></div></a>
+          <a class="category-card" href="#produtos" data-category-link="pulseiras"><img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=800&q=80" alt="Pulseiras elegantes" loading="lazy"><div class="category-shade"></div><div class="category-info"><span>03 / COLEÇÃO</span><h3>Pulseiras</h3><span class="category-arrow">↗</span></div></a>
+          <a class="category-card" href="#produtos" data-category-link="aneis"><img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=800&q=80" alt="Anéis brilhantes" loading="lazy"><div class="category-shade"></div><div class="category-info"><span>04 / COLEÇÃO</span><h3>Anéis</h3><span class="category-arrow">↗</span></div></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section products-section" id="produtos">
+      <div class="container">
+        <div class="products-heading"><div><p class="eyebrow">SEUS NOVOS FAVORITOS</p><h2>Peças para <em>se apaixonar.</em></h2></div><p>Escolha suas favoritas e consulte a disponibilidade diretamente pelo WhatsApp.</p></div>
+        <div class="product-tools"><div class="filters" role="group" aria-label="Filtrar produtos"><button class="filter active" data-filter="todos" aria-pressed="true">Todas as peças</button><button class="filter" data-filter="colares" aria-pressed="false">Colares</button><button class="filter" data-filter="brincos" aria-pressed="false">Brincos</button><button class="filter" data-filter="pulseiras" aria-pressed="false">Pulseiras</button><button class="filter" data-filter="aneis" aria-pressed="false">Anéis</button></div><span class="product-total" id="productTotal"></span></div>
+        <div class="products-grid" id="productGrid" aria-live="polite"></div>
+        <div class="products-bottom"><button class="outline-button" id="showMore">Ver mais peças <span>↗</span></button></div>
+      </div>
+    </section>
+
+    <section class="editorial" id="sobre"><div class="editorial-img"><img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1400&q=85" alt="Joias delicadas sobre fundo claro" loading="lazy"></div><div class="editorial-copy"><p class="eyebrow">A ESSÊNCIA MARTA</p><h2>Mais do que joias,<br /><em>sentimentos.</em></h2><p>Acreditamos que os pequenos detalhes tornam a vida extraordinária. Por isso, selecionamos peças que celebram sua personalidade, seus momentos e a sua luz.</p><span class="editorial-sign">Com carinho, Marta ♡</span></div></section>
+
+    <section class="contact-section" id="contato"><div class="container contact-content"><span class="contact-sparkle">✳</span><p class="eyebrow">ATENDIMENTO ESPECIAL</p><h2>Encontrou a joia <em>perfeita?</em></h2><p>Entre em contato, tire suas dúvidas e escolha sua próxima peça favorita.</p><a class="btn btn-dark" id="contactWhatsApp" href="#" target="_blank" rel="noopener noreferrer">Conversar no WhatsApp <span>↗</span></a></div></section>
+  </main>
+  <footer class="footer"><div class="container footer-main"><div><a href="#inicio" class="brand brand-footer">MARTA <span>JOIAS</span></a><p>Seu brilho, sua essência, seu momento.</p></div><div class="footer-links"><a href="#inicio">Início</a><a href="#categorias">Coleções</a><a href="#produtos">Joias</a><a href="#contato">Contato</a></div><a class="back-top" href="#inicio">Voltar ao topo ↑</a></div><div class="container footer-bottom"><span>© <span id="year"></span> Marta Joias. Todos os direitos reservados.</span><span>Feito com amor e delicadeza ✧</span></div></footer>
+  <a class="whatsapp-floating" href="#" id="floatingWhatsApp" target="_blank" rel="noopener noreferrer" aria-label="Conversar pelo WhatsApp"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 16c0 2.3.6 4.4 1.7 6.3L3 29l6.9-1.8c1.8 1 3.9 1.5 6.1 1.5 7.2 0 13-5.8 13-13S23.2 3 16 3Zm0 23.4c-2 0-3.9-.6-5.6-1.6l-.4-.2-4.1 1.1 1.1-4-.3-.4A10.4 10.4 0 1 1 16 26.4Zm5.7-7.8c-.3-.1-1.8-.9-2.1-1-.3-.1-.5-.1-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.6-1.8-1.8-2.1-.2-.3 0-.5.1-.6l.5-.6.3-.5c.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.5c0 1.4 1.1 2.8 1.2 3 .1.2 2.1 3.2 5.1 4.4.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.8 2.1-1.6.3-.8.3-1.5.2-1.6-.1-.1-.3-.2-.6-.4Z"/></svg></a>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
