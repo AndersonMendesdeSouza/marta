@@ -1,7 +1,5 @@
-// CONFIGURAÇÃO: troque pelo WhatsApp real da vendedora (DDD + número, sem espaços).
+// CONFIGURAÇÃO DO CATÁLOGO.
 const CONFIG = {
-  whatsapp: '5562999999999', // EXEMPLO! Substituir antes de publicar.
-  nomeLoja: 'Marta Joias',
   moeda: 'BRL'
 };
 
@@ -24,7 +22,6 @@ const produtos = [
 
 const categoriaLabel = {colares:'Colares',brincos:'Brincos',pulseiras:'Pulseiras',aneis:'Anéis'};
 const formatarPreco = valor => new Intl.NumberFormat('pt-BR',{style:'currency',currency:CONFIG.moeda}).format(valor);
-const whatsappUrl = mensagem => `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(mensagem)}`;
 let filtroAtual='todos';
 let mostrarTodos=false;
 let apenasFavoritos=false;
@@ -56,7 +53,7 @@ function renderizar(){
         ${p.selo?`<span class="product-badge">${p.selo}</span>`:''}
         <button class="heart ${favoritos.has(p.id)?'selected':''}" data-favorite="${p.id}" aria-pressed="${favoritos.has(p.id)}" aria-label="${favoritos.has(p.id)?'Remover':'Adicionar'} ${p.nome} ${favoritos.has(p.id)?'das':'às'} favoritas"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg></button>
       </div>
-      <div class="product-details"><span class="product-category">${categoriaLabel[p.categoria]}</span><h3>${p.nome}</h3><div class="product-price">${formatarPreco(p.preco)}</div><a href="${whatsappUrl(`Olá! Gostaria de saber mais sobre ${p.nome} (${formatarPreco(p.preco)}), da ${CONFIG.nomeLoja}.`)}" target="_blank" rel="noopener noreferrer" class="product-buy">Tenho interesse <span>↗</span></a></div>
+      <div class="product-details"><span class="product-category">${categoriaLabel[p.categoria]}</span><h3>${p.nome}</h3><div class="product-price">${formatarPreco(p.preco)}</div><button class="product-buy" type="button" data-demo-contact aria-label="Demonstrar interesse em ${p.nome}">Tenho interesse <span>↗</span></button></div>
     </article>`).join('') || `<p class="empty-state">Nenhuma peça encontrada nesta seleção. ♡</p>`;
   showMore.hidden=lista.length<=8;
   showMore.innerHTML=mostrarTodos?'Ver menos peças <span>↑</span>':'Ver mais peças <span>↗</span>';
@@ -82,9 +79,11 @@ document.getElementById('favoritesTrigger').addEventListener('click',()=>{
   renderizar();document.getElementById('produtos').scrollIntoView({behavior:'smooth'});
   if(apenasFavoritos&&!favoritos.size)avisar('Toque no coração das peças que mais gostar!');
 });
-const linkContato=whatsappUrl(`Olá! Gostaria de conhecer as joias da ${CONFIG.nomeLoja}.`);
-document.getElementById('contactWhatsApp').href=linkContato;
-document.getElementById('floatingWhatsApp').href=linkContato;
+document.addEventListener('click',e=>{
+  if(e.target.closest('[data-demo-contact]')){
+    avisar('Vitrine de demonstração. Nenhuma mensagem será enviada.');
+  }
+});
 document.getElementById('year').textContent=new Date().getFullYear();
 const menu=document.getElementById('nav'),toggle=document.getElementById('menuToggle');
 toggle.addEventListener('click',()=>{const aberto=menu.classList.toggle('open');toggle.setAttribute('aria-expanded',aberto);toggle.setAttribute('aria-label',aberto?'Fechar menu':'Abrir menu')});
